@@ -9,7 +9,7 @@ spec:
   strategy: 
     type: RollingUpdate
   selector:
-    matchLabels:
+    matchLabels :
       app: web3
   template:
     metadata:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: worldchanger/kubedemo
+          image: worldchanger/kubedemo:${BUILD_NUMBER}
           imagePullPolicy: Always
           ports:
             - containerPort: 9090
